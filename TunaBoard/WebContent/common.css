@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+* {
+	box-sizing: border-box;
+}
+html, body {
+	padding :0;
+	margin:0;
+	height: 100%;
+	width: 100%;
+}
+header{
+	height : 15%;
+	background-color: #ff9800;
+}
+header .title{
+	height: 70%;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+	margin: 0;
+}
+nav{
+	height: 30%;
+	text-align: left;
+	background-color: #ffe81b;
+	display: flex;
+    align-items: center;
+}
+nav a {
+    margin: 0 20px 0 0;
+    text-decoration: none;
+    color: black;
+}
+section {
+	height: 75%;
+	overflow: auto;
+}
+section h3{
+	text-align: center;
+}
+footer{
+	height: 10%;
+	background-color: #ff9800;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
