@@ -10,7 +10,9 @@
 <body>
 	<jsp:include page="header.jsp" />
 		<section>
-			회원 매출조회 화면
+			<div class="member">
+				<h3>회원 매출조회 화면</h3>
+			</div>
 		</section>
 	<jsp:include page="footer.jsp" />
 </body>

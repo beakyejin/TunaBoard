@@ -9,9 +9,11 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-		<div class="container">
-			회원 수정 화면
-		</div>
+		<section>
+			<div class="member">
+				<h3>회원 수정 화면</h3>
+			</div>
+		</section>
 	<jsp:include page="footer.jsp" />
 </body>
 </html>

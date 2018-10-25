@@ -9,16 +9,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dbpkg.MemberDAO;
+import dbpkg.MemberVO;
+
 @WebServlet("/memberJoin")
 public class MemberJoinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		MemberVO vo = MemberDAO.getMaxCustNo(); 
+		
+		request.setAttribute("vo", vo);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("memberJoin.jsp");
 		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
+		MemberVO vo = new MemberVO();
+		vo.setCustname(request.getParameter("custname"));
+		vo.setPhone(request.getParameter("phone"));
+		vo.setAddress(request.getParameter("address"));
+		vo.setGrade(request.getParameter("grade"));
+		vo.setCity(request.getParameter("city"));
+		
+		MemberDAO.insertMember(vo);
+		
+		
 		
 	}
 

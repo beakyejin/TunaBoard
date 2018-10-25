@@ -37,8 +37,21 @@ section {
 	height: 75%;
 	overflow: auto;
 }
+.member{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 section h3{
 	text-align: center;
+}
+section .home{
+	
+}
+.tbl_join table, tr, th, td{
+	border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
 }
 footer{
 	height: 10%;

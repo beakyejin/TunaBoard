@@ -2,6 +2,9 @@ package dbpkg;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class DBconn {
 	
@@ -17,5 +20,19 @@ public class DBconn {
 			e.printStackTrace();
 		}
 		return con;
+	}
+	
+	public static void close(Connection con, PreparedStatement ps, ResultSet rs){
+		if(rs != null){
+			try { rs.close(); } catch (SQLException e) {}
+		}
+		
+		if(ps != null){
+			try { ps.close(); } catch (SQLException e) {}
+		}
+		
+		if(con != null){
+			try { con.close(); } catch (SQLException e) {}
+		}
 	}
 }
