@@ -45,10 +45,20 @@ section {
 section h3{
 	text-align: center;
 }
-section .home{
-	
-}
 .tbl_join table, tr, th, td{
+	border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+.tbl_find {
+	width: 100%;
+    padding: 0 10px 20px 10px;
+}
+.tbl_find table{
+	width: 100%;
+	text-align: center;
+}
+.tbl_find table, tr, th, td{
 	border: 1px solid black;
     border-collapse: collapse;
     padding: 5px;

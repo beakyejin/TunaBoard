@@ -11,7 +11,19 @@
 	<jsp:include page="header.jsp" />
 		<section>
 			<div class="member">
-				<h3>회원 매출조회 화면</h3>
+				<h3>회원 매출 조회</h3>
+				<div class="tbl_sales">
+					<table>
+						<tr>
+							<th>회원번호</th>
+							<th>회원성명</th>
+							<th>고객등급</th>
+							<th>매출</th>
+						</tr>
+						<tr>
+						</tr>
+					</table>
+				</div>
 			</div>
 		</section>
 	<jsp:include page="footer.jsp" />
