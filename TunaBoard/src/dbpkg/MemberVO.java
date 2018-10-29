@@ -9,6 +9,17 @@ public class MemberVO {
 	private String grade;
 	private String city;
 	
+	//money테이블
+	private String price;
+	
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	//
+	
 	public int getCustno() {
 		return custno;
 	}

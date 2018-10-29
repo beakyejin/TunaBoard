@@ -18,9 +18,10 @@ public class MemberSalesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<MemberVO> vo = MemberDAO.getSales();
-		
-		Utils.dispatcher("meberSales", request, response);
+		List<MemberVO> list = MemberDAO.getSales();
+
+		request.setAttribute("list", list);
+		Utils.dispatcher("memberSales", request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

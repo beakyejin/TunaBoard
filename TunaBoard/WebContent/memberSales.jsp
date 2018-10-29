@@ -1,6 +1,9 @@
+<%@page import="dbpkg.MemberVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<% List<MemberVO> list = (List<MemberVO>)request.getAttribute("list"); %>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,8 +23,16 @@
 							<th>고객등급</th>
 							<th>매출</th>
 						</tr>
+						<% if(list != null && list.size() >0){ 
+								for(MemberVO vo : list){%>
 						<tr>
+							<td><%=vo.getCustno() %></td>
+							<td><%=vo.getCustname() %></td>
+							<td><%=vo.getGrade() %></td>
+							<td><%=vo.getPrice() %></td>
 						</tr>
+						<% }
+						}%>
 					</table>
 				</div>
 			</div>

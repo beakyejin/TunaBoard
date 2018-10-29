@@ -233,18 +233,17 @@ public class MemberDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		
-		String sql = " select "  
-						+ " a.custno as custno, "  
-						+ " max(a.custname) as custname, " 
-						+ "  decode(max( a.grade), 'A', 'VIP' "
-											 + " , 'B', '일반' "
-											 + " , 'C', '직원') as grade, " 
-						+ " sum(b.price) as price "
-					+ " from money_tbl_02 b "
-					+ " join member_tbl_02 a " 
-					+ " on a.custno = b.custno "
-					+ " group by a.custno "
-					+ " order by price desc";
+		String sql = " select a.custno as custno "
+					+" , a.custname as custname "
+					+" , decode(a.grade, 'A', 'VIP' " 
+					+" , 'B', '일반' "
+					+" , 'C', '직원') as grade "
+					+" , nvl(sum(b.price), 0) as price "
+					+" from member_tbl_02 a "
+					+" join money_tbl_02 b "
+					+" on a.custno = b.custno "
+					+" group by a.custno, a.custname, a.grade "
+					+" order by price desc ";
 		
 		try {
 			con = DBconn.getConnection();
@@ -257,8 +256,9 @@ public class MemberDAO {
 				vo.setCustno(rs.getInt("CUSTNO"));
 				vo.setCustname(rs.getString("CUSTNAME"));
 				vo.setGrade(rs.getString("GRADE"));
-				//TODO
+				vo.setPrice(rs.getString("PRICE"));
 				
+				list.add(vo);
 			}
 			
 		} catch (Exception e) {
@@ -269,6 +269,7 @@ public class MemberDAO {
 		}
 		
 		System.out.println("----getSales [End]----");
-		return null;
+		
+		return list;
 	}
 }

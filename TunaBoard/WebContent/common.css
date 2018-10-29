@@ -63,6 +63,10 @@ section h3{
     border-collapse: collapse;
     padding: 5px;
 }
+.tbl_sales table, tr, th, td{
+	border: 1px solid black;
+    border-collapse: collapse; 
+}
 footer{
 	height: 10%;
 	background-color: #ff9800;
